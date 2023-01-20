@@ -1,12 +1,15 @@
 import { useState } from "react";
-import MyPost from "../views/MyPost";
 import NoList from "./NoList";
+import Card from "./Card";
+import { useCollection } from "../hooks/useCollection";
 import '../assets/css/tab.scss'
 
 const Tab = () => {
     {/* content에 들어갈 component 나중에 넣기 */}
+    const { posts } = useCollection('posts');
+
     const tabMenu = [
-        {id:0, title:'작성한 글', content:<MyPost />},
+        {id:0, title:'작성한 글', content:<Card posts={posts} />},
         {id:1, title:'좋아요', content:<NoList/>},
         {id:2, title:'챌린지 현황', content:<NoList/>},
     ]

@@ -6,12 +6,12 @@ import { useCollection } from "../hooks/useCollection";
 
 const All = ():JSX.Element => {
     const { user } = useAuthContext();
-    const { posts } = useCollection('posts',['creatorId','==',user.uid]);
+    const { posts } = useCollection('posts');
 
     return (
         <div className="view">
             {user && <Write />}
-            <Card />
+            <Card posts={posts}/>
         </div>
     );
 }

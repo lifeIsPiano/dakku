@@ -12,7 +12,7 @@ const MyProfile = ():JSX.Element => {
     const { logout } = useLogout();
     const [modalOpen, setModalOpen] = useState(false);
 
-    const createdTime = new Intl.DateTimeFormat('kr').format(user.metadata.createdAt);
+    const createdTime = new Intl.DateTimeFormat('kr', {dateStyle:'long'}).format(user.metadata.createdAt);
     
     return (
         <div className="view no-padding">

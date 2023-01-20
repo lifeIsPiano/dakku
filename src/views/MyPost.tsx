@@ -4,11 +4,11 @@ import { useCollection } from "../hooks/useCollection";
 
 const MyPost = ():JSX.Element => {
     const { user } = useAuthContext();
-    // const { posts, error } = useCollection('posts',['uid','==', user.uid]);
+    const { posts } = useCollection('posts');
 
     return (
         <>
-            <Card />
+            <Card posts={posts}/>
         </>
     );
 }
