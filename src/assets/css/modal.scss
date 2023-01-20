@@ -1,0 +1,58 @@
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: all 0.3s;
+    .box{
+        width: 280px;
+        padding: 40px 20px 30px;
+        text-align: center;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: rgba(17, 17, 26, 0.3) 0px 0px 16px;
+    }
+    .btn-sec{
+        display: flex;
+        justify-content: center;
+    }
+
+    button{
+        margin-top: 20px;
+        border-radius: 8px;
+        color: #fff;
+        background-color: #535bf2;
+    }
+
+    .edit{
+        section{
+            display: flex;
+            gap: 20px;
+            text-align: left;
+            .editing {
+                span{
+                    margin-left: 15px;
+                    font-size: 14px;
+                }
+            }
+        }
+        .cancel{
+            color: #292929;
+            border: 2px solid #292929;
+            background-color: transparent;
+        }
+    }
+}
+
+.img-large{
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    object-fit: cover;
+}

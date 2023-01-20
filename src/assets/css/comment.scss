@@ -1,0 +1,23 @@
+.comment-msg{
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    .prof{
+        display: flex;
+        gap: 0 15px;
+        text-align: left;
+        .data{
+            display: flex;
+            gap: 0 15px;
+            h5{font-size: 16px;}
+            span{font-size: 14px;}
+        }
+    }
+    p{
+        padding-left: 65px;
+        text-align: left;
+        span{
+            margin-right: 15px;
+            color: #535bf2;
+        }
+    }
+}

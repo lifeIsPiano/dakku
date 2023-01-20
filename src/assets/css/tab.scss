@@ -1,0 +1,19 @@
+.tab{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #e4e4e4;
+    li{
+        width: calc((100% / 3) - 30px);
+        padding: 15px 0;
+        text-align: center;
+        cursor: pointer;
+    }
+    .active span{
+        padding-bottom: 15px;
+        border-bottom: 4px solid #535bf2;
+        font-weight: 700;
+    }
+    .tabContent{
+        padding: 0;
+    }
+}
