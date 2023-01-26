@@ -41,7 +41,7 @@ const SignUpByMail = () => {
                     <InputField title="닉네임" error="" type="text" 
                     inputName="nickname" inputValue={displayName}
                     placeholder="닉네임을 입력해주세요" 
-                    maxlength={12} 
+                    maxlength={20} 
                     func={handleData}/>
                     <InputField title="비밀번호" error={passwordCheck(error,password)} type="password" 
                     inputName="password" inputValue={password}

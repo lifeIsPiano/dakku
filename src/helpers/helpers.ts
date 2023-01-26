@@ -42,3 +42,18 @@ export const replaceUrlWithLink = (text:any) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
 };
+
+export const shareWeb = (id:any) => {
+    if (navigator.clipboard){
+        navigator.clipboard
+        .writeText(`http://localhost:5173/posting/${id}`)
+        .then(()=>{
+            alert('포스트 링크가 복사되었습니다.')
+        })
+        .catch(()=>{
+            alert('복사에 실패했습니다.')
+        })
+    } else {
+        alert('복사 기능 미지원 브라우저입니다.')
+    }
+}
