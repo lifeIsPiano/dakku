@@ -28,6 +28,21 @@ export const CardDetail = ({tagName, myId, postId}:Test):JSX.Element => {
         }
     }
 
+    const shareWeb = () => {
+        if (navigator.clipboard){
+            navigator.clipboard
+            .writeText(`http://localhost:5173/posting/${!postId ? id : postId}`)
+            .then(()=>{
+                alert('포스트 링크가 복사되었습니다.')
+            })
+            .catch(()=>{
+                alert('복사에 실패했습니다.')
+            })
+        } else {
+            alert('복사 기능 미지원 브라우저입니다.')
+        }
+    }
+
     return (
         <>
             <span className="tag">{tagName === '' ? '전체 글' : tagName}</span>
@@ -36,7 +51,7 @@ export const CardDetail = ({tagName, myId, postId}:Test):JSX.Element => {
                 댓글 {comments.length}
             </button>
             <LikesButton postId={!postId ? id : postId}/>
-            <CardShare />
+            <CardShare shareSNS={!postId ? id : postId} shareLink={shareWeb}/>
             {!user || myId !== user.uid ? null: (
                 <button className="more" onClick={deletePost}>
                     <i className="icon-trash-2"></i>

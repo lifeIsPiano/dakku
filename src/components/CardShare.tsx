@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
-const CardShare = ():JSX.Element => {
+const CardShare = ({shareSNS,shareLink}:any):JSX.Element => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const node:any = useRef();
 
@@ -22,9 +23,16 @@ const CardShare = ():JSX.Element => {
                 <i className="icon-share-2"></i>
             </button>
             {modalOpen && <div className="shares mdl" ref={node}>
-                <button><i className="icon-twitter"></i> 트위터 공유</button>
-                <button><i className="icon-google"></i> 아무튼 공유</button>
-            </div>}
+            <TwitterShareButton 
+            style={{padding:'10px'}}
+            url={`http://localhost:5173/posting/${shareSNS}`}>
+                <TwitterIcon size={24} round={true} borderRadius={24} />
+                <span className="hover-color">트위터 공유</span>
+            </TwitterShareButton>
+            <button onClick={shareLink}>
+                <i className="icon-edit"></i>링크 복사</button>
+            </div>
+            }
         </>
     )
 }
