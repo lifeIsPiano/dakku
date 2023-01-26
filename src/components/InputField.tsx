@@ -32,7 +32,6 @@ const InputField =
                     <i className={title === '비밀번호' ? 'icon-info':''} onClick={()=>{setModalOpen(true)}}></i>
                 </div>
                 <span>{error}</span>
-                {/* 에러 발생 시 error 문구 출력하고 아니면 '' */}
             </div>
             <input type={type} className="text-input" 
             id={inputName}

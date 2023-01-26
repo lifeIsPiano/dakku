@@ -1,11 +1,12 @@
 //좋아요 목록
-import CardView from "../components/CardView";
+import Likes from "../components/Likes";
 
 const LikesList = ():JSX.Element => {
+
     return (
-        <>
-            <CardView/>
-        </>
+        <div className="view">
+            <Likes />
+        </div>
     );
 }
 

@@ -6,7 +6,7 @@ import { useCollection } from "../hooks/useCollection";
 
 const All = ():JSX.Element => {
     const { user } = useAuthContext();
-    const { posts } = useCollection('posts');
+    const { posts } = useCollection('posting',['createdAt','>=',0]);
 
     return (
         <div className="view">

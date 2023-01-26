@@ -1,26 +1,30 @@
 import CardDetail from "./CardDetail";
+import { replaceUrlWithLink } from "../helpers/helpers";
 import '../assets/css/card.scss';
 
-const CardPost = ():JSX.Element => {
+const CardPost = ({post}:any):JSX.Element => {
+
     return (
         <div className="card">
             <div className="prof">
-                <img src={`/image/userImage.png`} alt="" className="img-small"/>
+                <img src={!post.icon ? `/image/userImage.png`:post.icon} alt="" className="img-small"/>
                 <div className="data">
-                    <h5>Nickname</h5>
-                    <p>{`2023.1.23 오후 2:23`}</p>
+                    <h5>{post.name}</h5>
+                    <p>{new Intl.DateTimeFormat('kr', {dateStyle:'long', timeStyle:'short'}).format(post.createdAt)}</p>
                 </div>
             </div>
             <div className="post-content">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque impedit magni alias non mollitia beatae voluptas esse! Ea illum exercitationem, rerum, ipsam neque ipsa sed maxime magni cum est nostrum.
-                </p>
-                {/* <div className="image-list">
-                    <img src="" alt="" />
-                </div> */}
+                    {post.post && 
+                    <p dangerouslySetInnerHTML={{ __html: replaceUrlWithLink(post.post) }}></p>
+                    }
+                    {post.imgUrl && 
+                    <div className="image-list">
+                        <img src={post.imgUrl} alt="" className="card-img"/>
+                    </div>
+                    }
             </div>
             <div className="card-detail np">
-                <CardDetail/>
+                <CardDetail tagName={post.tag} myId={post.creatorId} postId={post.id}/>
             </div>
         </div>
     );

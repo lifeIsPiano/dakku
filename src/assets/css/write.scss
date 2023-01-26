@@ -34,7 +34,7 @@
             transition: all 0.3s;
             cursor: pointer;
             .icon-image{line-height: 25px;}
-            &:hover:enabled{
+            &:hover,:hover:enabled{
                 background-color: #13198d;
             }
             &:disabled{

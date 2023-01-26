@@ -8,7 +8,7 @@ const Confirm = ({click}:any):JSX.Element => {
                 <p>
                 비밀번호는 공백 없이 6 ~ 16자 이내의 영문, 숫자, 특수문자(@,$,!,%,*,#,?,&,~)를 혼용해서 작성해주세요.
                 </p>
-                <button onClick={click}>확인</button>
+                <button className='btn-modal' onClick={click}>확인</button>
             </div>
         </div>
     );

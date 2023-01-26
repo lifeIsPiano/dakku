@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { useAuthContext } from "./hooks/useAuthContext";
 import { ScrollToTop } from './helpers/helpers';
 import Navbar from './components/Navbar';
@@ -13,7 +12,8 @@ import MyProfile from './views/MyProfile';
 import SignUpPage from './views/SignUpPage';
 import LoginPage from './views/LoginPage';
 import JoinByMailView from './views/JoinByMailView';
-import './App.css'
+import CardView from "./components/CardView";
+import './App.css';
 
 function App() {
   const { user } = useAuthContext();
@@ -31,6 +31,7 @@ function App() {
               <Route path='/recommend' element={<Recommend />}/>
               <Route path='/challenge' element={<Challenge />}/>
               <Route path='/likes' element={<LikesList />}/>
+              <Route path='/posting/:id' element={<CardView />}></Route>
               <Route path='/my-profile' element={user ? <MyProfile /> : <Navigate to="/" replace={true} />}/>
               <Route path='/signup' element={!user ? <SignUpPage /> : <Navigate to="/" replace={true} />}/>
               <Route path='/login' element={!user ? <LoginPage /> : <Navigate to="/" replace={true} />}/>

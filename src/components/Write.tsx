@@ -1,16 +1,18 @@
 //글 작성 구간
-import React, { useRef, useCallback, useState } from "react";
+import { useRef, useCallback, useState } from "react";
 import { useAuthContext } from '../hooks/useAuthContext';
 import { appFireStore, storage } from "../store/fBase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, setDoc, doc, addDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { uuidv4 } from "@firebase/util";
-import '../assets/css/write.scss'
+import '../assets/css/write.scss';
 
 const Write = ():JSX.Element => {
     const { user } = useAuthContext();
     const [post,setPost] = useState('');
     const [imgLoad, setImgLoad] = useState('');
+    const [inputCount, setInputCount] = useState(0);
+    const [tag,setTag] = useState('');
 
     //textarea 사이즈 변화
     const textRef:any = useRef<HTMLElement>(null);
@@ -20,7 +22,6 @@ const Write = ():JSX.Element => {
         textRef.current.style.height = textRef.current.scrollHeight + 'px';
     },[])
 
-    const [inputCount, setInputCount] = useState(0);
     const onInputHandler = (e:any) => {
         setInputCount(e.target.value.length);
         setPost(e.target.value)
@@ -30,34 +31,35 @@ const Write = ():JSX.Element => {
     const onSubmit = async (event:any) => {
         event.preventDefault();
         let imgUrl='';
-        //텍스트만 올리기
-        if (imgUrl !== ''){
+
+        if (imgLoad !== ''){
             const fileRef = ref(storage, `${user.uid}/${uuidv4()}`);
-            const response = await uploadString(fileRef, imgLoad, 'data_url')
+            await uploadString(fileRef, imgLoad, 'data_url');
             imgUrl=await getDownloadURL(fileRef);
         }
 
-        await addDoc(collection(appFireStore, "posts"), {
+        const id=uuidv4();
+
+        await setDoc(doc(appFireStore, "posting",id), {
             post,
             createdAt: Date.now(),
             creatorId:user.uid,
             name:user.displayName,
-            likes:[],
-            comments:[],
             imgUrl,
+            id:id,
             icon:user.photoURL,
-            tag:'',
+            tag:tag,
         });
         setPost("");
         setInputCount(0);
         setImgLoad("");
     }
 
-    const onFileChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+    const onFileChange = (event:any) => {
         const {target:{files}} = event;
-        const ImgFile = files![0];
+        const ImgFile = files[0];
         const reader = new FileReader();
-        reader.onloadend = (finishedEvent: ProgressEvent<FileReader>) => {
+        reader.onloadend = (finishedEvent:any) => {
             const {
                 currentTarget : {result}
             } = finishedEvent;
@@ -68,6 +70,10 @@ const Write = ():JSX.Element => {
 
     const onClearImgClick = () => {
         setImgLoad('');
+    }
+
+    const handleChange = (e:React.ChangeEvent<any>) => {
+        setTag(e.target.value)
     }
 
     return (
@@ -93,7 +99,7 @@ const Write = ():JSX.Element => {
                     }
                 </div>
                 <div className="upload-btn">
-                    <select name="" id="">
+                    <select name="" id="goPost" onChange={handleChange}>
                         <option value="">전체</option>
                         <option value="다꾸 팁">다꾸 팁</option>
                         <option value="후기 및 추천">후기 및 추천</option>
@@ -105,7 +111,7 @@ const Write = ():JSX.Element => {
                         </div>
                     </label>
                     <input type="file" name="file" id="file" accept="image/*" onChange={onFileChange} />
-                    <button className="upload" type="submit" disabled={post === '' ? true : false}>
+                    <button className="upload" type="submit" disabled={post === '' && imgLoad === '' ? true : false}>
                         <i className="icon-edit-3"></i>
                     </button>
                 </div>

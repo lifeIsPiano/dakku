@@ -9,8 +9,6 @@ export const ScrollToTop = () => {
     return null;
 };
 
-//상대시간 설정 
-
 //정규표현식
 const regexMail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
 
@@ -35,3 +33,8 @@ export const passwordCheck = (error:string,password:string) => {
         return '비밀번호가 틀립니다.'
     }
 }
+
+export const replaceUrlWithLink = (text:any) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+};

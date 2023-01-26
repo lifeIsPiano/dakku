@@ -20,7 +20,6 @@ export const useSignup = ():SignupResult => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 const curUser:any = appAuth.currentUser;
-                console.log(user);
 
                 if (!user) {
                     throw new Error('회원가입에 실패했습니다.');

@@ -1,9 +1,13 @@
 //로그인 로딩
-import React from "react";
+import '../assets/css/loading.scss';
 
 const Loading = ():JSX.Element => {
     return (
-        <div></div>
+        <div className="loading-wrapper">
+            <div className="lds-roller">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+        </div>
     );
 }
 

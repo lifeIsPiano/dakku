@@ -1,4 +1,13 @@
 .side-menu{
+    width: 320px;
+    min-height: calc(100vh - 60px);
+    padding: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+    border-right: 1px solid #eee;
+    z-index: 90;
     background-color: #fff;
     .menu-item {
         width: 100%;

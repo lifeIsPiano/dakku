@@ -5,7 +5,6 @@
         display: flex;
         text-align: left;
         .data{
-            margin-top: 3px;
             margin-left: 15px;
             h5{font-size: 18px;}
             p{font-size: 14px;}
@@ -14,13 +13,15 @@
     .content{
         padding-left: 65px;
         p{
-            padding: 15px 20px 15px 0;
+            padding: 15px 20px 10px 0;
             text-align: left;
             white-space: pre-wrap;
         }
         .card-img{
-            max-width: 800px;
+            width: 100%;
             height: 400px;
+            margin: 5px 0 10px 0;
+            border-radius: 10px;
             object-fit: cover;
         }
     }
@@ -30,13 +31,27 @@
         p{
             font-size: 18px;
             line-height: 25px;
+            white-space: pre-wrap;
+            a{
+                color: #535bf2;
+                text-decoration: underline;
+            }
+        }
+        .card-img{
+            width: 100%;
+            height: 500px;
+            margin-top: 10px;
+            border-radius: 10px;
+            object-fit: cover;
         }
     }
     .card-detail{
+        width: fit-content;
         padding-left: 65px;
+        position: relative;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 60px;
         font-size: 14px;
         .tag{
             padding: 3px 10px;
@@ -50,12 +65,35 @@
             align-items: center;
             padding: 10px;
             gap: 5px;
+            transition: all 0.3s;
             i{font-size: 18px;}
             .icon-full-star{
                 color: #535bf2;
                 text-shadow: 0px 0px 5px #9785ff; 
             }
+            &:hover{
+                color: #535bf2;
+            }
+        }
+        .mdl{
+            width: fit-content;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: -80px;
+            background-color: rgba(255,255,255,0.8);
+            border: 1px solid #ccc;
+            border-radius:5px;
+            i{margin-right: 5px;}
+            button:hover{color: #535bf2;}
+        }
+        .delEdit{
+            right: -25px;
+        }
+        .shares{
+            right: 60px;
         }
     }
     .np{padding-left: 0;}
 }
+

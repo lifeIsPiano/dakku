@@ -23,22 +23,60 @@
         justify-content: center;
     }
 
-    button{
+    .btn-modal{
         margin-top: 20px;
         border-radius: 8px;
         color: #fff;
         background-color: #535bf2;
     }
 
+    .save{
+        margin-top: 0;
+        border: none;
+        padding: 0.7rem 1.35rem;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
     .edit{
         section{
             display: flex;
-            gap: 20px;
-            text-align: left;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
             .editing {
-                span{
-                    margin-left: 15px;
-                    font-size: 14px;
+                .updateImg{
+                    position: relative;
+                    label{
+                        position: absolute;
+                        right: 30px;
+                        bottom: 5px;
+                        cursor: pointer;
+                        i{
+                            padding: 5px;
+                            border: 2px solid #dbdcf3;
+                            border-radius: 100px;
+                            color: #fff;
+                            background-color: #535bf2;
+                        }
+                    }
+                    input[type=file]{
+                        display: none;
+                    }
+                }
+                .change-name{
+                    display: block;
+                    width: 150px;
+                    height: 36px;
+                    font-size: 16px;
+                    border: none;
+                    border-bottom: 1px solid #999;
+                    outline: none;
+                }
+                .btn-sec{
+                    flex-direction: row;
+                    margin-top: 30px;
                 }
             }
         }

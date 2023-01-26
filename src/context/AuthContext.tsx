@@ -2,7 +2,7 @@ import { createContext, useReducer, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { appAuth } from '../store/fBase';
 
-const AuthContext = createContext(null);
+const AuthContext = createContext({});
 
 const authReducer = (state: any,
     action: any) => {
