@@ -21,6 +21,8 @@ export const mailCheck = (error:string,email:string) => {
         return '이메일 형식이 아닙니다.'
     } else if (error !== null && error.includes('user-not-found')){
         return '등록되지 않은 이메일입니다.'
+    } else if (error === null){
+        return ''
     }
 }
 
@@ -31,6 +33,8 @@ export const passwordCheck = (error:string,password:string) => {
         return '비밀번호 형식이 아닙니다.';
     } else if (error !== null && error.includes('wrong-password') && password !== ''){
         return '비밀번호가 틀립니다.'
+    } else if (error === null){
+        return ''
     }
 }
 

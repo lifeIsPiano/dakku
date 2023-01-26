@@ -27,7 +27,7 @@ const SignUpByMail = () => {
         signup(email, password, displayName);
     }
     //작성한 조건에 맞지 않으면 버튼 disabled되게 할 수 있나?
-
+    
     return (
         <div className="fields">
             <form onSubmit={handleSubmit}>
@@ -48,7 +48,7 @@ const SignUpByMail = () => {
                     placeholder="비밀번호를 입력해주세요" 
                     maxlength={16} 
                     func={handleData}/>
-                    <SubmitButton btnName="회원가입" />
+                    <SubmitButton btnName={isPending ? '가입 중..' : '회원가입'} able={!email || !password || !displayName || error ? true:false} />
                 </fieldset>
             </form>
         </div>

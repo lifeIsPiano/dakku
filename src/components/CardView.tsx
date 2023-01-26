@@ -17,14 +17,14 @@ const CardView = ():JSX.Element => {
 
     return (
         <div className="view no-padding">
-        {!isLoading ? (
-            <>
+            {isLoading ? <Loading/> : (
+                <>
                 <Bar category="포스트"/>
                 {!isLoading && <CardPost post={post}/>}
                 {user ? <WriteComment /> : null}
                 <Comment comments={comments} origin={post?.name}/>
-            </>
-        ): <Loading />}
+                </>
+            )}
         </div>
     );
 }

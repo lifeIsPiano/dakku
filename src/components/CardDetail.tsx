@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { appFireStore } from "../store/fBase";
@@ -22,7 +21,7 @@ export const CardDetail = ({tagName, myId, postId}:Test):JSX.Element => {
     
     const PostRef=doc(appFireStore,'posting',`${!postId ? id : postId}`)
     const deletePost = async () => {
-        const ok = window.confirm('정말로 삭제하시겠습니까?');
+        const ok = window.confirm('정말로 포스트를 삭제하시겠습니까?');
         if (ok){
             navigate('/')
             await deleteDoc(PostRef);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "./Card";
 import Likes from "./Likes";
-import CalendarView from "./Calendar";
+import Progress  from "./Progress";
 import { useCollection } from "../hooks/useCollection";
 import { useAuthContext } from '../hooks/useAuthContext';
 import '../assets/css/tab.scss'
@@ -13,7 +13,7 @@ const Tab = () => {
     const tabMenu = [
         {id:0, title:'작성한 글', content:<Card posts={posts} />},
         {id:1, title:'좋아요', content:<Likes />},
-        {id:2, title:'챌린지 현황', content:<CalendarView/>},
+        {id:2, title:'챌린지 현황', content:<Progress />},
     ]
     const [index, setIndex] = useState(0);
 

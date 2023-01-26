@@ -1,25 +1,11 @@
 //회원가입
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signInWithPopup, GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
+import { onSocialClick } from "../hooks/useLogin";
 
 const SignUp = ():JSX.Element => {
     const navigate=useNavigate();
     const goSigninByMail = () => {
         navigate('/signup/bymail')
-    }
-    const auth = getAuth();
-
-    const onSocialClick = async (event:any) => {
-        const {
-            target:{name},
-        } = event;
-        let provider;
-        if (name === "google"){
-            provider = new GoogleAuthProvider();
-        } else if (name === "github"){
-            provider = new GithubAuthProvider();
-        }
-        await signInWithPopup(auth, provider as any);
     }
 
     return (

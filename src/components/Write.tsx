@@ -2,7 +2,7 @@
 import { useRef, useCallback, useState } from "react";
 import { useAuthContext } from '../hooks/useAuthContext';
 import { appFireStore, storage } from "../store/fBase";
-import { collection, setDoc, doc, addDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { uuidv4 } from "@firebase/util";
 import '../assets/css/write.scss';

@@ -1,0 +1,50 @@
+.cal-wrapper{
+    width: 100%;
+    min-height: calc(100vh - 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    .cal-text{
+        width: 600px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #dbdcf3;
+        span{
+            margin: 0 5px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #535bf2;
+        }
+        .chal-text{
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        
+    }
+    .p-bar{
+        margin-top: 60px;
+        text-align: center;
+        .size{
+            margin-bottom: 30px;
+            font-size: 20px;
+            span{font-size: 28px;}
+        }
+        span{
+            margin: 0 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #535bf2;
+        }
+        .perc{
+            max-width: 80px;
+            margin-top: 40px;
+            font-size: 20px;
+            text-align: center;
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+    }
+}

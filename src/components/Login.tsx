@@ -5,7 +5,7 @@ import { useLogin } from "../hooks/useLogin";
 import InputField from "./InputField";
 import SubmitButton from "./SubmitButton";
 import { mailCheck, passwordCheck } from "../helpers/helpers";
-import { getAuth, signInWithPopup, GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
+import { onSocialClick } from "../hooks/useLogin";
 
 const Login = ():JSX.Element => {
     const [email, setEmail] = useState('');
@@ -25,21 +25,6 @@ const Login = ():JSX.Element => {
         login(email, password);
     }
 
-    const auth = getAuth();
-
-    const onSocialClick = async (event:any) => {
-        const {
-            target:{name},
-        } = event;
-        let provider;
-        if (name === "google"){
-            provider = new GoogleAuthProvider();
-        } else if (name === "github"){
-            provider = new GithubAuthProvider();
-        }
-        await signInWithPopup(auth, provider as any);
-    }
-
     return (
         <>
             <div className="fields">
@@ -55,7 +40,8 @@ const Login = ():JSX.Element => {
                         placeholder="비밀번호를 입력해주세요" 
                         maxlength={16} 
                         func={handleData}/>
-                        <SubmitButton btnName="로그인"/>
+                        <SubmitButton btnName={isPending ? '로그인 중..' : '로그인'}
+                        able={!email || !password || isPending ? true:false}/>
                     </fieldset>
                 </form>
                 <div className="sns-login mt">
