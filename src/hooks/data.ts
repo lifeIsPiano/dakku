@@ -103,16 +103,18 @@ export const useLikeCol = (id:string) => {
                     ...doc.data(),
                 };
             });
+            if (newArray.length < 1) return;
             setLikes(newArray);
         });
             return () => {
                 unsubscribe();
             };
-        },[collection])
+        },[collection]);
         
         const likedId=likes.map((like:any)=>{
-            return like.postId.postId
+            return like.postId.postId;
         })
     
-    return { likes, likedId } 
+    return { likes, likedId } ;
 }
+

@@ -12,6 +12,7 @@
 
 .view{
   width: calc(100% - 320px);
+  min-height: calc(100vh - 60px);
   margin-left: 320px;
 }
 

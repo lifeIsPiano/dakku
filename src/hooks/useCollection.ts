@@ -1,14 +1,21 @@
 import { appFireStore } from "../store/fBase"
 import { useEffect, useState } from "react"
-import { onSnapshot, collection, query, orderBy, where } from "firebase/firestore";
+import { onSnapshot, collection, query, orderBy, where, } from "firebase/firestore";
+import { WhereFilterOp } from "firebase/firestore";
 
-export const useCollection = (transaction:any,section:[any,any,any]) => {
-    const [posts, setPosts] = useState<any[]>([]);
+type PostType = {
+    id: string,
+    name: string
+}
+
+export const useCollection = (transaction:string,section:[string,WhereFilterOp,any]) => {
+    const [posts, setPosts] = useState<PostType[]>([]);
 
     useEffect(() => {
         const list = query(collection(appFireStore,transaction),
         where(...section),
-        orderBy("createdAt","desc"));
+        orderBy("createdAt","desc"),
+        );
         const unsubscribe = onSnapshot(list, querySnapshot => {
             const newArray:any = querySnapshot.docs.map(doc => {
                 return {
