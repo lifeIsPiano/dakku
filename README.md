@@ -36,7 +36,11 @@ Dakku.
 ### 프로젝트 주요 기능
 
 1. 회원가입(이메일, 구글, 깃허브)
-    
+
+- Firebase Authentication 으로 구현
+- 이메일로 로그인 시 정규표현식으로 유효성을 검사(메일 형식, 비밀번호 형식 등에 맞지 않으면 에러 메시지가 출력)-조건에 맞지 않으면 로그인/회원가입 버튼 disabled되도록
+- SNS 연동 로그인의 경우 새로운 팝업창이 열리고 로그인이 진행됨
+
 ![7777 JPG](https://user-images.githubusercontent.com/121603759/215009975-d5783f2b-e6cb-42ff-b504-6b05c7c88eb6.jpg)
 ![999 JPG](https://user-images.githubusercontent.com/121603759/215009981-724eae91-73d3-4e2e-81c0-81a8d05afd12.jpg)
 ![11222 JPG](https://user-images.githubusercontent.com/121603759/215009983-0c924795-ea8f-4137-9739-0bbabf51e84e.jpg)
@@ -44,9 +48,10 @@ Dakku.
 
 2. 포스트 업로드
 
-- 텍스트, 이미지(jpg,png,gif…) 업로드 및 삭제
-- 프로필 업데이트 
-- 댓글 업로드 및 삭제
+- 텍스트, 이미지(jpg,png,gif…) 업로드 및 삭제(텍스트만/이미지만 업로드 가능함)
+- 프로필 업데이트
+- 댓글 업로드 및 삭제(자신이 업로드한 게시글 및 댓글만 삭제 가능함)
+- 로그인하지 않은 이용자는 게시글을 볼 수 있으나, 좋아요 가 불가능하고, 글 작성이 불가능함
 **
     ![222222 JPG](https://user-images.githubusercontent.com/121603759/215010119-d04c21da-fd52-42aa-844d-ea2f16470819.jpg)
 ![3333 JPG](https://user-images.githubusercontent.com/121603759/215010123-ec71ba6a-9052-4f14-ae7f-c69e3e1655ff.jpg)
@@ -54,6 +59,9 @@ Dakku.
 
     
 3. 링크 공유 기능
+
+- react-share 로 sns 공유 기능 구현
+- navigator.clipboard로 링크 복사 기능 구현
     ![545](https://user-images.githubusercontent.com/121603759/215010333-22a7fcc9-f922-4386-bea6-4d6667e7eb9e.JPG)
 
     
@@ -66,7 +74,7 @@ Dakku.
 
 ## 기술 특장점
 
-- **TypeScript**로 작업하려 노력함
+- **TypeScript**로  작성해 오류의 발생을 최소화하려 함
 - **Context API**를 이용해 계속적으로 사용되는 user 정보를 상태관리에 사용
 - 컴포넌트 및 Custom hook 분리로 코드 재사용성 및 코드 가독성을 높이고자 함
 - **Firebase**로 로그인, 데이터 업로드 및 저장 기능을 활용
