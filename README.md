@@ -1,16 +1,14 @@
 # dakku
 
 ## Overview
+![dk JPG](https://user-images.githubusercontent.com/121603759/215009905-45dc2b9c-e0ea-48b0-aed7-d7130ae36078.jpg)
 
-![dk.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4c7fdfa0-fc6f-41a2-a0d9-8529e9b74369/dk.jpg)
 
 > **프로젝트명 
 Dakku.
 
 프로젝트 기간 
 1월 9일 ~ 1월 27일 (약 3주간)**
-▶ [깃허브 주소](https://github.com/lifeIsPiano/dakku)
-> 
 
 ## Project
 
@@ -33,46 +31,38 @@ Dakku.
 **Database `Firebase`**
 
 ### 폴더 구조
-
-- *폴더구조 이미지를 첨부해주세요.*
-
-![folder.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4b88f0f3-d094-4e91-9c84-93f361fc5b86/folder.jpg)
+![folder JPG](https://user-images.githubusercontent.com/121603759/215009804-3a66c9cc-b79a-49fb-837e-8e740c640597.jpg)
 
 ### 프로젝트 주요 기능
 
 1. 회원가입(이메일, 구글, 깃허브)
     
-    ![7777.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/285330be-adee-4215-b72f-6ceae4de5396/7777.jpg)
-    
-    ![999.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/09f3598c-4f1a-4b97-9b74-39d6d9b6f5c4/999.jpg)
-    
-    ![11222.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c77f4eb-847a-4a28-853c-ffe4d3530d57/11222.jpg)
+![7777 JPG](https://user-images.githubusercontent.com/121603759/215009975-d5783f2b-e6cb-42ff-b504-6b05c7c88eb6.jpg)
+![999 JPG](https://user-images.githubusercontent.com/121603759/215009981-724eae91-73d3-4e2e-81c0-81a8d05afd12.jpg)
+![11222 JPG](https://user-images.githubusercontent.com/121603759/215009983-0c924795-ea8f-4137-9739-0bbabf51e84e.jpg)
     
 
 2. 포스트 업로드
 
-- 텍스트, 이미지(jpg,png,gif…) 업로드 가능
+- 텍스트, 이미지(jpg,png,gif…) 업로드 및 삭제
 - 프로필 업데이트 
+- 댓글 업로드 및 삭제
 **
-    
-    ![222222.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0738a05f-355f-4aa5-b30f-ff7ee87fb64b/222222.jpg)
-    
-    ![3333.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ceb68674-7626-40e5-b637-9e30b26c80b8/3333.jpg)
-    
-    ![44444.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57a8921f-6d2f-4f23-bab9-f7ebd4a79909/44444.jpg)
-    
-1. 링크 공유 기능
-    
-    ![44444.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57a8921f-6d2f-4f23-bab9-f7ebd4a79909/44444.jpg)
-    
-2. 좋아요 누르기 및 좋아요 리스트 확인
+    ![222222 JPG](https://user-images.githubusercontent.com/121603759/215010119-d04c21da-fd52-42aa-844d-ea2f16470819.jpg)
+![3333 JPG](https://user-images.githubusercontent.com/121603759/215010123-ec71ba6a-9052-4f14-ae7f-c69e3e1655ff.jpg)
+![44444 JPG](https://user-images.githubusercontent.com/121603759/215010132-3fe970fc-3dfd-4b6a-a7d1-dac002bc7359.jpg)
 
-![66666.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71592a1c-b9f5-4c80-9881-9554dd82b37c/66666.jpg)
+    
+3. 링크 공유 기능
+    ![545](https://user-images.githubusercontent.com/121603759/215010333-22a7fcc9-f922-4386-bea6-4d6667e7eb9e.JPG)
 
-1. 챌린지
     
-    ![55555.JPG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15197ffb-905c-4ae4-9c75-3b9c34799925/55555.jpg)
-    
+4. 좋아요 누르기 및 좋아요 리스트 확인
+![66666 JPG](https://user-images.githubusercontent.com/121603759/215010402-352309fa-c3bf-4f55-9731-082e77d4612f.jpg)
+
+5. 챌린지
+    ![55555 JPG](https://user-images.githubusercontent.com/121603759/215010424-b8290d49-bfd1-4504-a036-29c9e340fbb2.jpg)
+
 
 ## 기술 특장점
 
